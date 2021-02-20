@@ -1,4 +1,4 @@
-package org.mp;
+package org.preining;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,7 +23,7 @@ public class PrimaryController {
 
     public void apiStart(ActionEvent actionEvent){
         try {
-            logFile = new File(PrimaryController.class.getProtectionDomain().getCodeSource().getLocation().getPath()+"logSchw.txt");
+            logFile = new File(PrimaryController.class.getProtectionDomain().getCodeSource().getLocation().getPath()+"lfk_gui_log.txt");
             logFile.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,10 +38,9 @@ public class PrimaryController {
         stopBtn.setVisible(true);
         startBtn.setVisible(false);
     }
-
     public void apiStop(ActionEvent actionEvent) {
         apiObj.APIStop();
-        //täglich.setDisable(false);
+        täglich.setDisable(false);
         laufend.setDisable(false);
         startBtn.setVisible(true);
         stopBtn.setVisible(false);

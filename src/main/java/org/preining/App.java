@@ -1,4 +1,4 @@
-package org.mp;
+package org.preining;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,8 +14,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Database db = new Database();
-        db.Connect();
         Scene scene = new Scene(loadFXML("primary"));
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         scene.setCursor(Cursor.DEFAULT);

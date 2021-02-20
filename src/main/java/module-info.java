@@ -1,11 +1,10 @@
-module org.mp {
+module org.example {
     requires javafx.controls;
     requires javafx.fxml;
-    requires javafx.media;
     requires javafx.swing;
-    requires java.sql;
-    requires mysql.connector.java;
+    requires javafx.media;
+    requires json;
 
-    opens org.mp to javafx.fxml;
-    exports org.mp;
+    opens org.preining to javafx.fxml;
+    exports org.preining;
 }

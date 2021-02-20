@@ -1,20 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.mp</groupId>
-    <artifactId>LFK_FrontEnd</artifactId>
-    <version>1</version>
+    <groupId>org.example</groupId>
+    <artifactId>LFK_GUI</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.15</maven.compiler.source>
         <maven.compiler.target>1.15</maven.compiler.target>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.21</version>
-        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -35,6 +30,11 @@
             <artifactId>javafx-swing</artifactId>
             <version>16-ea+4</version>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20180130</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -52,7 +52,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.5</version>
                 <configuration>
-                    <mainClass>org.mp.App</mainClass>
+                    <mainClass>org.preining.App</mainClass>
                     <launcher>LFK</launcher>
                     <compress>2</compress>
                     <jlinkZipName>LFK</jlinkZipName>

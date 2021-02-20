@@ -1,4 +1,4 @@
-package org.mp;
+package org.preining;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -34,7 +34,7 @@ public class API {
             in.close();
         }
         else{
-            return String.format("GET NOT WOKING");
+            return String.format("GET NOT WORKING");
         }
         return responseString.toString();
     }

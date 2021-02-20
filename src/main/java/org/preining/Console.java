@@ -1,12 +1,14 @@
-package org.mp;
+package org.preining;
 
+import org.json.*;
 import javafx.scene.control.TextArea;
 import java.io.File;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.media.*;
 import javax.swing.*;
+import org.preining.Observer;
 
-public class Console implements Observer {
+public class Console implements Observer{
     private boolean isQuit = false;
     private String ffName;
     private TextArea text;
@@ -30,17 +32,17 @@ public class Console implements Observer {
     @Override
     public void notify(Object sender, String infoOut){
         text.setText("");
-        String[] alarms = infoOut.split("\"einsatz\":");
-        alarmArr = new Alarm[alarms.length];
-        if(alarms.length != 0) {
-            for (int i = 1; i < alarms.length; i++) {
-                Alarm alarm = new Alarm(alarms[i], this.text, this.ffName, this.log);
-                alarmArr[i] = alarm;
-            }
-            for(int i = 1; i < alarmArr.length; i++){
-                if(alarmArr[i].geteFDArray().contains(this.ffName)){
-                    infoBox(alarmArr[i].print());
-                }
+        JSONObject json = new JSONObject(infoOut);
+        JSONObject alarms = new JSONObject(json.get("einsaetze").toString());
+        int amount = Integer.parseInt(json.get("cnt_einsaetze").toString());
+        alarmArr = new Alarm[amount];
+        for(int i = 0; i < amount; i++){
+            String temp = String.valueOf(i);
+            JSONObject tempJSON = new JSONObject(alarms.get(temp).toString());
+            JSONObject tempJSON2 = new JSONObject(tempJSON.get("einsatz").toString());
+            alarmArr[i] = new Alarm(tempJSON2, this.text,this.ffName, this.log);
+            if(alarms.get(""+temp).toString().contains(ffName)){
+                infoBox(alarms.get(""+temp).toString());
             }
         }
     }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="pane" maxHeight="760" maxWidth="650" minHeight="760" minWidth="650" prefHeight="760.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.preining.PrimaryController">
+    <TextArea fx:id="textOut" editable="false" focusTraversable="false" maxHeight="702.0" maxWidth="650.0" minHeight="702.0" minWidth="650.0" prefHeight="702.0" prefWidth="650.0" />
+    <Button fx:id="startBtn" focusTraversable="false" layoutX="14.0" layoutY="719.0" onAction="#apiStart" text="Start" />
+    <Button fx:id="stopBtn" focusTraversable="false" layoutX="14.0" layoutY="719.0" onAction="#apiStop" text="Stop" visible="false" />
+    <Button fx:id="clearBtn" focusTraversable="false" layoutX="585.0" layoutY="719.0" mnemonicParsing="false" onAction="#apiClear" text="Clear" />
+    <RadioButton fx:id="täglich" focusTraversable="false" layoutX="325.0" layoutY="723.0" mnemonicParsing="false" onAction="#radioBtnChanged" text="Täglich">
+      <toggleGroup>
+         <ToggleGroup fx:id="radio" />
+      </toggleGroup></RadioButton>
+    <RadioButton fx:id="laufend" focusTraversable="false" layoutX="237.0" layoutY="723.0" mnemonicParsing="false" onAction="#radioBtnChanged" selected="true" text="Laufend" toggleGroup="$radio" />
+</AnchorPane>
