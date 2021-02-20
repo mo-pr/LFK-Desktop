@@ -1,4 +1,4 @@
-# LFK_FrontEnd
+# LFK-Desktop
 GUI-LFK_API
 
 It's a graphical UI which shows the every alert for fire-departments in upper austria.
